@@ -19,6 +19,16 @@ on:
       - "desktop_version/src/**.h"
       - "third_party/**"
       - ".github/workflows/ci.yml"
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+      environment:
+        description: 'Environment to deploy'
+        required: false
+        default: 'staging'
 
 env:
   SRC_DIR_PATH: desktop_version
